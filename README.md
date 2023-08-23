@@ -59,7 +59,7 @@ NOTE: Customer details are masked on this workbook to protect company's sensitiv
     > =SUBTOTAL(9,W6:W271)/COUNT(W6:W271)
 
 *ACHIEVEMENT*
-  * As a result of this analysis, real churn rate was found to be higher than reported figures and accounts that were categorized under real churn was cross referenced with historical customer tickets and complaints data. Trends in pricing and quality of service issues was collated which initiated projects for marketting campaigns and infrastructure upgrades and recovered 35% of churned clients. The sparklines were also useful in identifying accounts in danger of churn by filtering WHERE otal Customers = 0 (active accounts) and WHERE difference in COUNT of transaction type < 1; giving insights for Sales department to focus on retention efforts for accounts with lowest negative values.
+  * As a result of this analysis, real churn rate was found to be higher than reported figures and accounts that were categorized under real churn was cross referenced with historical customer tickets and complaints data. Trends in pricing and quality of service issues was collated which initiated projects for marketting campaigns and infrastructure upgrades and recovered 35% of churned clients. The sparklines were also useful in identifying accounts in danger of churn by filtering WHERE Total Customers = 0 (active accounts) and WHERE difference in COUNT of transaction type < 1; giving insights for Sales department to focus on retention efforts for accounts with lowest negative values.
 
   
   
