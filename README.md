@@ -1,6 +1,6 @@
 # Excel-Churn-Calculation
 The workbook shows calculation of churn rate from company's Financial records. It uses remittances and invoices to estimate the accuracy of reported churn rate by the Sales and Service Delivery teams. This was necessary because
-even though some B2B clients have not yet churned on paper, the accounts have little to no inflows for services due to various reasons like credit notes issued for not meeeting SLAs or making statement on dissatisfied service.
+even though some B2B clients have not yet churned on paper, year on year account receivables increased and outweighed cash inflows from remittances.
 NOTE: Customer details are masked on this workbook to protect company's sensitive information.
 
 *STEP 1: CONSOLIDATING YEARLY RECORDS*
@@ -50,9 +50,16 @@ NOTE: Customer details are masked on this workbook to protect company's sensitiv
   
 *STEP 3: ESIMATING CHURN*
   * COUNT "Total Customers" i.e. "0"s and "1"s
+    > =COUNT(T6:T271)
   * COUNT "Active Customers" i.e. "0"s
+    > =COUNTIF(T6:T271, 0)
   * COUNT "Churned Customers" i.e. "1"s
+    > =COUNTIF(T6:T271, 1)
   * Compute churned as a % of Churned/Total
+    > =SUBTOTAL(9,W6:W271)/COUNT(W6:W271)
+
+*ACHIEVEMENT*
+  * As a result of this analysis, real churn rate was found to be higher than reported figures and accounts that were categorized under real churn was cross referenced with historical customer tickets and complaints data. Trends in pricing and quality of service issues was collated which initiated projects for marketting campaigns and infrastructure upgrades and recovered 35% of churned clients. The sparklines were also useful in identifying accounts in danger of churn by filtering WHERE otal Customers = 0 (active accounts) and WHERE difference in COUNT of transaction type < 1; giving insights for Sales department to focus on retention efforts for accounts with lowest negative values.
 
   
   
