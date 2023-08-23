@@ -4,7 +4,7 @@ even though some B2B clients have not yet churned on paper, year on year account
 NOTE: Customer details are masked on this workbook to protect company's sensitive information.
 
 *STEP 1: CONSOLIDATING YEARLY RECORDS*
-* Customer data on names, date, transaction type, debit amount (invoices) and credit amount (remittances) were extracted from financial syatem.
+* Customer data on names, date, transaction type, debit amount (invoices) and credit amount (remittances) were extracted from financial system.
 * Performed data cleansing and transformation on the date field to ensure compatabilty with expected date format in Excel by performing text to columns action on the 'text, data type
 * Concatenated split columns with:
   > =IFERROR(DATEVALUE(CONCATENATE(C4,"-",D4,"-",E4)), "")
@@ -15,7 +15,7 @@ NOTE: Customer details are masked on this workbook to protect company's sensitiv
 
 *STEP 2: DEVELOPING CHURN LOGIC*
 * Count of transaction type was done for the required years, giving the number of invoices sent and remittance received per customer per year.
-* Difference between invoice and remittance for each customer is calculated, negative numbers indicates higher invoices/requests for payments been sent out by the company (An indication of dissatisfied customer). Sparklines were also addes for the difference as a visual aid
+* Difference between invoice and remittance for each customer is calculated, negative numbers indicates higher payment reminders/requests being sent out (an indication of dissatisfied customer). Sparklines were also added for the difference as a visual aid
 * Active/inactive status on the accounts were determined using values in count of transaction cells, where blank cells shows no activity on the account
   > =IF(ISBLANK(G271),"No Activity","Active")
 * Based on account activity, 0, 1 and 'empty cell' values are assigned for each customer with NESTED IF functions
@@ -59,7 +59,7 @@ NOTE: Customer details are masked on this workbook to protect company's sensitiv
     > =SUBTOTAL(9,W6:W271)/COUNT(W6:W271)
 
 *ACHIEVEMENT*
-  * As a result of this analysis, real churn rate was found to be higher than reported figures and accounts that were categorized under real churn was cross referenced with historical customer tickets and complaints data. Trends in pricing and quality of service issues was collated which initiated projects for marketting campaigns and infrastructure upgrades and recovered 35% of churned clients. The sparklines were also useful in identifying accounts in danger of churn by filtering WHERE Total Customers = 0 (active accounts) and WHERE difference in COUNT of transaction type < 1; giving insights for Sales department to focus on retention efforts for accounts with lowest negative values.
+  * As a result of this analysis, real churn rate was found to be higher than reported figures and accounts that were categorized under real churn was cross referenced with historical customer tickets and complaints data. Trends in pricing and quality of service issues was collated which initiated projects for marketting campaigns and infrastructure upgrades and recovered 35% of churned clients. The sparklines were also useful in identifying accounts in danger of churn by filtering WHERE Total Customers = 0 (active accounts) and WHERE difference in COUNT of transaction type < 1; giving insights for Sales department to focus on retention efforts prioritizing by lowest negative values.
 
   
   
